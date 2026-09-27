@@ -41,14 +41,15 @@
 ## Results
 
 ### Task 1 — Air Quality Forecasting
-- See `results/task1_metrics.json` for full MAE/MSE/RMSE/R² for both Linear Regression and Random Forest.
-- Random Forest outperformed Linear Regression, indicating non-linear relationships between engineered features and the target.
-- Most recent lag features were the strongest predictors (see `results/task1_feature_importance.png`).
+- **Linear Regression:** MAE: **0.4496**, MSE: **0.4560**, RMSE: **0.6753**, R²: **0.7613**
+- **Random Forest:** MAE: **0.4242**, MSE: **0.3998**, RMSE: **0.6323**, R²: **0.7908**
+- Random Forest clearly outperformed Linear Regression, confirming non-linear relationships between cyclical time, rolling averages, and pollutant levels.
+- Most recent lag features (`CO(GT)_lag1`, `CO(GT)_lag2`) and short rolling averages (`CO(GT)_roll3`) were the strongest predictors (see `results/task1_feature_importance.png`).
 
 ### Task 2 — MNIST Neural Network
-- Baseline model test accuracy: **97.71%** (see `results/metrics.json` and notebook output for full details).
-- Confusion matrix shows most confusion between visually similar digits (e.g. 4/9, 3/5).
-- Experiment (modified hidden layer size) results and comparison are shown in the notebook and `results/experiment_comparison.png`.
+- **Baseline Model (128-64):** Test Accuracy: **97.28%**, Test Loss: **0.1175** (see `results/metrics.json` and notebook output).
+- **Modified Model (32-16):** Test Accuracy: **96.48%**, Test Loss: **0.1220** (see `results/experiment_comparison.png`).
+- **Confusion Matrix:** Shows high classification performance across all digits with minor confusion between visually similar digits (e.g. 4/9, 3/5, 7/1).
 
 ## Key Learnings
 1. Normalizing input data significantly stabilizes and speeds up neural network training.
