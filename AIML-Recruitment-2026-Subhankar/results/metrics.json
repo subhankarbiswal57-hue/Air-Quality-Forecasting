@@ -1,0 +1,12 @@
+{
+  "baseline_model": {
+    "architecture": "128-64",
+    "test_loss": 0.11749636381864548,
+    "test_accuracy": 0.9728000164031982
+  },
+  "modified_model": {
+    "architecture": "32-16",
+    "test_loss": 0.12201874703168869,
+    "test_accuracy": 0.9648000001907349
+  }
+}
